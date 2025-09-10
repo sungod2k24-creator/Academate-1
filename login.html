@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Academate — Sign in</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner container">
+      <div class="brand"><div class="mark"></div><div class="brand-name">Academate</div></div>
+      <nav class="links">
+        <a href="index.html" class="muted">Back</a>
+        <button id="themeToggle" class="btn-ghost small" title="Toggle theme">🌙</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" style="min-height:78vh; display:flex; align-items:center; justify-content:center;">
+    <div class="modal-card" style="max-width:820px; width:95%;">
+      <div class="login-card form-side" id="loginForm">
+        <h2>Quick Sign In</h2>
+        <p class="muted">Choose role and enter demo credentials</p>
+
+        <label for="role">Role</label>
+        <select id="role">
+          <option value="student">Student</option>
+          <option value="faculty">Faculty</option>
+          <option value="admin">Admin</option>
+        </select>
+
+        <label for="college">College</label>
+        <select id="college">
+          <option>Government Engineering College, Samastipur</option>
+          <option>B P Mandal College of Engineering</option>
+          <option>Muzaffarpur Institute of Technology</option>
+          <option>Government Engineering College, Vaishali</option>
+        </select>
+
+        <label for="user">ID / Email</label>
+        <input id="user" type="text" placeholder="ENR12345 or faculty@college.edu">
+
+        <label for="pass">Password</label>
+        <input id="pass" type="password" placeholder="password">
+
+        <div style="margin-top:16px; display:flex; gap:12px;">
+          <button class="btn primary" id="submitLogin">Sign In</button>
+          <a href="index.html" class="btn ghost" style="display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:10px;">Cancel</a>
+        </div>
+      </div>
+
+      <aside style="width:320px; padding-left:8px; display:flex; flex-direction:column; gap:12px; align-items:flex-start;">
+        <div style="background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02)); padding:18px; border-radius:10px; width:100%;">
+          <h4 style="margin:4px 0 8px;">Student Dashboard Preview</h4>
+          <div class="chart-card" style="height:150px;">
+            <div class="chart-bar" style="height:72px"></div>
+            <div class="chart-bar" style="height:52px"></div>
+            <div class="chart-bar" style="height:96px"></div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer"><div class="container copy">© Academate — Smart Hub for HEIs (Demo)</div></footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,706 @@
+/* ------------------------------------------------------------------
+   Theme variables
+   ------------------------------------------------------------------ */
+:root {
+  --bg: #0f1416;
+  --panel: #15181a;
+  --muted: #a3adb3;
+  --white: #ffffff;
+  --teal1: #14B8A6;
+  --teal2: #38BDF8;
+  --accent: #7b61ff;
+  --card-border: rgba(255, 255, 255, 0.06);
+  --radius: 12px;
+}
+
+body.light-theme {
+  --bg: #ffffff;
+  --panel: #f6f8fa;
+  --muted: #55606a;
+  --white: #0b1112;
+  --card-border: rgba(0, 0, 0, 0.06);
+}
+
+/* ------------------------------------------------------------------
+   Reset & base
+   ------------------------------------------------------------------ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background: var(--bg);
+  color: var(--white);
+  font-family: Inter, system-ui, Arial, sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 28px;
+}
+
+/* ------------------------------------------------------------------
+   NAV
+   ------------------------------------------------------------------ */
+header.nav {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  background: linear-gradient(
+    180deg,
+    rgba(14, 16, 17, 0.96),
+    rgba(14, 16, 17, 0.92)
+  );
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mark {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--teal1), var(--teal2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-name {
+  font-weight: 700;
+  font-family: Poppins, Inter;
+  font-size: 18px;
+  color: var(--white);
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.cta-login {
+  background: linear-gradient(90deg, var(--teal1), var(--teal2));
+  color: #021214;
+  border: 0;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btn-ghost.small {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 6px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--muted);
+}
+
+/* ------------------------------------------------------------------
+   Hero + chart
+   ------------------------------------------------------------------ */
+.hero {
+  display: flex;
+  gap: 36px;
+  align-items: flex-start;
+  padding: 28px 0;
+}
+
+.hero-left {
+  flex: 1;
+}
+
+.headline {
+  font-family: Poppins, Inter;
+  font-size: 34px;
+  margin: 0 0 12px;
+  color: var(--white);
+}
+
+.tagline {
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+
+.btn-row {
+  display: flex;
+  gap: 12px;
+}
+
+.btn {
+  padding: 12px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 0;
+  font-weight: 700;
+}
+
+.btn.primary {
+  background: linear-gradient(90deg, var(--teal1), var(--teal2));
+  color: #021213;
+}
+
+.btn.ghost {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: var(--white);
+}
+
+.trust {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.logo {
+  background: rgba(255, 255, 255, 0.02);
+  padding: 6px 10px;
+  border-radius: 8px;
+  color: var(--muted);
+}
+
+/* ------------------------------------------------------------------
+   Hero right (preview / laptop frame)
+   ------------------------------------------------------------------ */
+.hero-right {
+  width: 640px;
+}
+
+.laptop-frame {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.015),
+    rgba(255, 255, 255, 0.01)
+  );
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid var(--card-border);
+}
+
+.laptop-screen {
+  background: linear-gradient(
+    180deg,
+    rgba(10, 12, 12, 0.9),
+    rgba(12, 16, 16, 0.9)
+  );
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.02);
+  position: relative;
+  z-index: 1;
+}
+
+/* Chart preview */
+.chart-preview {
+  height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.chart-card {
+  width: 100%;
+  max-width: 520px;
+  height: 180px;
+  display: flex;
+  align-items: flex-end;
+  gap: 14px;
+  padding: 16px;
+  border-radius: var(--radius);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.012),
+    rgba(255, 255, 255, 0.006)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  box-shadow: 0 10px 28px rgba(2, 8, 10, 0.5);
+  overflow: visible;
+  position: relative;
+  z-index: 1;
+}
+
+.chart-bar {
+  flex: 1 1 auto;
+  min-width: 36px;
+  max-width: 80px;
+  background: linear-gradient(180deg, var(--teal1), var(--teal2));
+  border-radius: 8px 8px 4px 4px;
+  box-shadow: 0 8px 20px rgba(3, 16, 18, 0.55);
+  transition: height 0.35s ease, transform 0.18s ease;
+  transform-origin: bottom center;
+  z-index: 2;
+  border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+/* ------------------------------------------------------------------
+   Colleges panel / cards
+   ------------------------------------------------------------------ */
+.colleges-panel {
+  margin-top: 22px;
+  padding: 18px;
+  border-radius: 12px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.01),
+    rgba(255, 255, 255, 0.005)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.panel-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.colleges-row {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 12px 6px;
+  scrollbar-width: thin;
+}
+
+.college-card {
+  flex: 0 0 260px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.01),
+    rgba(255, 255, 255, 0.02)
+  );
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid var(--card-border);
+  min-height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: box-shadow 0.15s, transform 0.12s;
+  position: relative;
+}
+
+.college-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.college-card.active {
+  box-shadow: 0 20px 40px rgba(56, 189, 248, 0.06);
+  border-color: rgba(56, 189, 248, 0.18);
+}
+
+.college-name {
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.card-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.login-role {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 0;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.login-role.faculty {
+  background: linear-gradient(90deg, var(--accent), #6b8cff);
+  color: #021214;
+}
+
+.login-role.student {
+  background: linear-gradient(90deg, var(--teal1), var(--teal2));
+  color: #021214;
+}
+
+/* ------------------------------------------------------------------
+   Problem section
+   ------------------------------------------------------------------ */
+.problem-section {
+  margin-top: 18px;
+  padding: 28px;
+  border-radius: 12px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.01),
+    rgba(255, 255, 255, 0.005)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.problem-list {
+  color: var(--muted);
+  line-height: 1.6;
+  padding-left: 18px;
+}
+
+/* ------------------------------------------------------------------
+   Login page / modal styles
+   ------------------------------------------------------------------ */
+.modal-card {
+  width: min(960px, 96%);
+  max-width: 980px;
+  border-radius: 14px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.01)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 22px;
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  transform: translateY(0);
+  transition: transform 0.32s cubic-bezier(.2, .9, .25, 1), box-shadow 0.22s;
+  box-shadow: 0 20px 60px rgba(3, 10, 14, 0.6);
+  opacity: 1;
+  z-index: 3100;
+}
+
+.login-card {
+  flex: 1 1 540px;
+  min-width: 320px;
+}
+
+.login-card h2 {
+  margin: 0 0 8px;
+}
+
+.login-card label {
+  display: block;
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.login-card input,
+.login-card select {
+  width: 100%;
+  padding: 12px 14px;
+  margin-top: 6px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: var(--white);
+  outline: none;
+  transition: box-shadow 0.14s ease, border-color 0.14s ease, transform 0.12s ease;
+}
+
+.login-card input:focus,
+.login-card select:focus {
+  border-color: rgba(56, 189, 248, 0.9);
+  box-shadow: 0 6px 22px rgba(56, 189, 248, 0.06);
+  transform: translateY(-1px);
+}
+
+.modal .btn {
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+.modal .btn.primary {
+  min-width: 110px;
+}
+
+/* ------------------------------------------------------------------
+   Custom select (login page)
+   ------------------------------------------------------------------ */
+.custom-select {
+  position: relative;
+  width: 100%;
+  margin-top: 6px;
+  user-select: none;
+}
+
+.custom-select .select-btn {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 0.98rem;
+}
+
+.custom-select .caret {
+  opacity: 0.9;
+  font-size: 14px;
+}
+
+.custom-select .options {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-top: 8px;
+  background: var(--panel);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 12px 28px rgba(2, 8, 10, 0.6);
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 9999;
+  display: none;
+}
+
+.custom-select.open .options {
+  display: block;
+}
+
+.custom-select .option {
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+  color: var(--white);
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.custom-select .option:last-child {
+  border-bottom: 0;
+}
+
+.custom-select .option:hover,
+.custom-select .option.active {
+  background: rgba(56, 189, 248, 0.06);
+  color: var(--white);
+}
+
+/* ------------------------------------------------------------------
+   Testimonials, footer & responsive
+   ------------------------------------------------------------------ */
+.testimonials-section {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 40px 0;
+}
+main option{
+  color: black;
+}
+.test-left {
+  flex: 1;
+}
+
+.test-right {
+  width: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.testimonial-card {
+  background: var(--panel);
+  padding: 28px;
+  border-radius: 12px;
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.quote {
+  font-size: 18px;
+  line-height: 1.45;
+  color: var(--white);
+}
+
+.who {
+  color: var(--muted);
+  margin-top: 12px;
+}
+
+.dots {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  cursor: pointer;
+}
+
+.dot.active {
+  background: linear-gradient(90deg, var(--teal1), var(--accent));
+}
+
+/* Controls layout */
+.test-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+}
+
+.left-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.right-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Inspirations */
+.inspirations {
+  margin-top: 18px;
+}
+
+.inspirations p {
+  margin: 6px 0;
+  color: var(--muted);
+}
+
+/* Footer */
+.site-footer {
+  background: #0c1112;
+  padding: 28px 0;
+  margin-top: 28px;
+  color: var(--muted);
+}
+
+.footer-inner {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.footer-col {
+  flex: 1 1 220px;
+  min-width: 200px;
+}
+
+.footer-col h4 {
+  color: var(--white);
+  margin: 0 0 8px;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.footer-col .socials a {
+  color: var(--muted);
+  text-decoration: none;
+  margin-right: 6px;
+}
+
+.trusted-box {
+  display: flex;
+  justify-content: center;
+  padding: 18px 0;
+}
+
+.trusted-inner {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.01),
+    rgba(255, 255, 255, 0.005)
+  );
+  padding: 14px 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  display: inline-flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.trusted-logos {
+  font-weight: 700;
+  color: var(--white);
+}
+
+.copy {
+  text-align: center;
+  margin-top: 14px;
+  color: var(--muted);
+}
+
+/* ------------------------------------------------------------------
+   Responsive adjustments
+   ------------------------------------------------------------------ */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+  }
+
+  .hero-right {
+    width: 100%;
+  }
+
+  .college-card {
+    flex: 0 0 84%;
+  }
+
+  .testimonials-section {
+    flex-direction: column;
+  }
+
+  .test-right {
+    width: 100%;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .trusted-inner {
+    width: 100%;
+    justify-content: center;
+  }
+}

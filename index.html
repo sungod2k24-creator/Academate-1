@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Academate — Bihar HEI Hub (Demo)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- NAV -->
+  <header class="nav" role="banner">
+    <div class="nav-inner container">
+      <div class="brand" aria-label="Academate">
+        <div class="mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" width="22" height="22">
+            <path d="M6 24 L32 8 L58 24 L32 40 Z" fill="white" opacity="0.95"></path>
+            <rect x="29" y="36" width="6" height="14" rx="2" fill="white" opacity="0.95"></rect>
+          </svg>
+        </div>
+        <div class="brand-name">Academate</div>
+      </div>
+
+      <nav class="links" role="navigation" aria-label="Main navigation">
+        <a href="#home" class="muted">Home</a>
+        <a href="#features" class="muted">Features</a>
+        <a href="#collegesPanel" class="muted">Colleges</a>
+        <a href="#contact" class="muted">Contact</a>
+
+        <button id="themeToggle" class="btn-ghost small" title="Toggle theme">🌙</button>
+
+        <a href="login.html" class="cta-login nav-login-button" id="openLogin">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main id="home" class="container">
+    <section class="hero">
+      <div class="hero-left">
+        <h1 class="headline">Your Verified Student Profile — All in One Place.</h1>
+        <p class="tagline">Track certificates, internships, leadership & club activities. Auto-generate verified portfolios for placements and accreditation.</p>
+        <div class="btn-row">
+          <button class="btn primary" id="exploreBtn">Explore Colleges</button>
+          <button class="btn ghost" id="demoBtn">View Demo</button>
+        </div>
+
+        <div class="trust" aria-hidden="true">
+          <div class="logo">NAAC</div>
+          <div class="logo">NIRF</div>
+          <div class="logo">AICTE</div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+       <div class="laptop-frame">
+        <div class="laptop-screen">
+          <h3 class="dashboard-title">Student Dashboard Preview</h3>
+          <p class="muted small">A quick analytic snapshot for institutions.</p>
+
+          <div class="chart-preview" aria-hidden="true">
+            <div class="chart-card" id="chartCard">
+              <div class="chart-bar" style="height:160px"></div>
+              <div class="chart-bar" style="height:132px"></div>
+              <div class="chart-bar" style="height:100px"></div>
+              <div class="chart-bar" style="height:76px"></div>
+              <div class="chart-bar" style="height:52px"></div>
+            </div>
+          </div>
+
+        </div>
+       </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Colleges (cards) -->
+  <section class="colleges-panel container" id="collegesPanel">
+    <div class="panel-inner">
+      <h3>Institution Access — Quick Login</h3>
+      <p class="muted">Select your college and then choose Faculty / Student login.</p>
+
+      <div id="colleges" class="colleges-row" aria-label="Colleges list">
+        <div class="college-card" data-college="Government Engineering College, Samastipur">
+          <div class="college-name">Government Engineering College, Samastipur</div>
+          <div class="card-actions">
+            <button class="login-role faculty">Faculty Login</button>
+            <button class="login-role student">Student Login</button>
+          </div>
+        </div>
+
+        <div class="college-card" data-college="B P Mandal College of Engineering">
+          <div class="college-name">B P Mandal College of Engineering</div>
+          <div class="card-actions">
+            <button class="login-role faculty">Faculty Login</button>
+            <button class="login-role student">Student Login</button>
+          </div>
+        </div>
+
+        <div class="college-card" data-college="Muzaffarpur Institute of Technology">
+          <div class="college-name">Muzaffarpur Institute of Technology</div>
+          <div class="card-actions">
+            <button class="login-role faculty">Faculty Login</button>
+            <button class="login-role student">Student Login</button>
+          </div>
+        </div>
+
+        <div class="college-card" data-college="Government Engineering College, Vaishali">
+          <div class="college-name">Government Engineering College, Vaishali</div>
+          <div class="card-actions">
+            <button class="login-role faculty">Faculty Login</button>
+            <button class="login-role student">Student Login</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem -->
+  <section id="problem" class="container problem-section">
+    <div class="problem-inner">
+      <h2>Why Academate — Explanation of the Problem</h2>
+      <ul class="problem-list">
+        <li><strong>Records scattered:</strong> In most colleges/universities, student achievements are scattered in cupboards or files.</li>
+        <li><strong>No single platform:</strong> There is no single platform that brings together everything a student has done — seminars, internships, clubs, competitions.</li>
+        <li><strong>Accreditation pain:</strong> Colleges struggle a lot during NAAC/AICTE/NIRF accreditation because the data is scattered and hard to compile.</li>
+        <li><strong>Visibility & placements:</strong> Students can't easily build verified portfolios; teachers don't have a full picture.</li>
+        <li><strong>Our solution:</strong> Smart Student Hub (web + mobile) that stores verified records, supports approvals, and generates shareable portfolios for students and easy reports for admins.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Testimonials (fixed layout updated) -->
+  <section id="testimonials" class="container testimonials-section">
+    <div class="test-left">
+      <h2>What people say</h2>
+      <p class="muted">Real feedback from students & faculty using Academate</p>
+
+      <!-- inspirational messages -->
+      <div class="inspirations">
+        <p class="inspire-1">“Make every achievement count — verify, collect, and showcase.”</p>
+        <p class="inspire-2">“Your verified portfolio is your passport to internships, placements, and scholarships.”</p>
+      </div>
+    </div>
+
+    <div class="test-right">
+      <div class="testimonial-card" id="testimonialCard">
+        <div class="quote">“Academate helped me keep all my certificates and internships in one verified place — recruiters loved my portfolio during placements.”</div>
+        <div class="who"><strong>Satyam Singh</strong> • Student</div>
+      </div>
+
+      <div class="test-controls">
+        <div class="left-controls">
+          <div class="dots" id="dots" aria-hidden="true"></div>
+        </div>
+
+        <div class="right-controls">
+          <button id="nextTest" class="btn ghost">Next</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer (updated per request) -->
+  <footer class="site-footer" id="contact">
+    <div class="container footer-inner">
+      <div class="footer-col about-col">
+        <h4>About</h4>
+        <p class="muted">Academate is a smart, verified student-activity hub for Higher Education Institutions — built to reduce paperwork, strengthen portfolios, and simplify accreditation.</p>
+      </div>
+
+      <div class="footer-col contact-col">
+        <h4>Contact Us</h4>
+        <ul>
+          <li>Phone: +91 98765 43210</li>
+          <li>Email: support@academate.demo</li>
+          <li>Address: Higher Education Dept. Demo Centre</li>
+        </ul>
+      </div>
+
+      <div class="footer-col follow-col">
+        <h4>Follow Us</h4>
+        <div class="socials">
+          <a href="#" aria-label="LinkedIn" class="social">LinkedIn</a> ·
+          <a href="#" aria-label="Twitter" class="social">Twitter</a> ·
+          <a href="#" aria-label="Facebook" class="social">Facebook</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trusted box centered -->
+    <div class="trusted-box container">
+      <div class="trusted-inner">
+        <div>Trusted by</div>
+        <div class="trusted-logos">NAAC · NIRF · AICTE</div>
+      </div>
+    </div>
+
+    <div class="container copy">© Academate — Smart Hub for HEIs (Bihar demo)</div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
